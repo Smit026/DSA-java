@@ -7,23 +7,19 @@ public class lec_005_01_binary_2_decimal {
 		System.out.println("enter number : ");
 		int n=sc.nextInt();
 		int ans=0,i=0;
-		int bit;
-	
+		int digit;
+
 		while(n!=0) {
 		
 				
-				bit= n & 1;
-				ans=(int)(Math.pow(10,i)*bit)+ans;
+				digit= n %10;
+				if(digit==1) {
+					ans=(int)(ans+Math.pow(2,i));
+				}
 				
-				n=n>>1;
+				n=n/10;
 				i++;
 		}
 		System.out.println(ans);
 		}
-		
-	
-		
-		
-	
-
-}
+	}
