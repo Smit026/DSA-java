@@ -1,0 +1,44 @@
+import java.util.*;
+public class Solution {
+    public static int[] firstAndLastPosition(ArrayList<Integer> arr, int n, int k) {
+        // Write your code here.
+        int s=0;
+        int e=n-1;
+       
+        int start=-1;
+         int end=-1;
+        
+        while(s<=e){
+             int mid=s+(e-s)/2;
+        if(k==arr.get(mid)){
+         start=mid;
+            e=mid-1;
+        }else if(k>arr.get(mid)){
+            s=mid+1;
+        }else if(k<arr.get(mid)){
+            e=mid-1;
+        }
+        
+        }
+         s=0;
+        e=n-1;
+        
+         while(s<=e){
+         int mid=s+(e-s)/2;
+             if(k==arr.get(mid)){
+         end=mid;
+            s=mid+1;
+        }else if(k>arr.get(mid)){
+            s=mid+1;
+        }else if(k<arr.get(mid)){
+            e=mid-1;
+        }
+       
+        }
+        return new int[]{start,end};
+    }
+}
+
+
+output :- arr={1,2,3,3,3,3,5} key =3
+ans= 2 5
